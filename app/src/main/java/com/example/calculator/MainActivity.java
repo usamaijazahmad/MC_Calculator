@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -122,6 +123,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 tv.setText(tv.getText().toString() + '9');
+            }
+        });
+
+        acbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tv.setText("");
+            }
+        });
+
+        point.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tv.setText(tv.getText().toString() + '.');
             }
         });
 
