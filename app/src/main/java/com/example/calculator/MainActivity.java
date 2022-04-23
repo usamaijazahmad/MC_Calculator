@@ -30,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
     Button zerobtn;
     Button point;
     TextView tv;
+    TextView tv2;
+
+    private float result;
+    private char op;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         delbtn=findViewById(R.id.delbtn);
         acbtn=findViewById(R.id.acbtn);
         tv=findViewById(R.id.textView);
+        tv2=findViewById(R.id.textView2);
 
         zerobtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +137,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 tv.setText("");
+                tv2.setText("");
+
+            }
+        });
+
+        delbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CharSequence name = tv.getText().toString();
+                tv.setText(name.subSequence(0, name.length()-1));
             }
         });
 
@@ -140,5 +157,78 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        plusbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                op ='+';
+                result = Float.parseFloat(tv.getText().toString());
+                tv2.setText(String.valueOf(result)+'+');
+                tv.setText("");
+            }
+        });
+
+        minbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                op ='-';
+                result = Float.parseFloat(tv.getText().toString());
+                tv2.setText(String.valueOf(result)+'-');
+                tv.setText("");
+            }
+        });
+
+        mulbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                op ='*';
+                result = Float.parseFloat(tv.getText().toString());
+                tv2.setText(String.valueOf(result)+'x');
+                tv.setText("");
+            }
+        });
+
+        divbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                op ='/';
+                result = Float.parseFloat(tv.getText().toString());
+                tv2.setText(String.valueOf(result)+'÷');
+                tv.setText("");
+            }
+        });
+
+        perc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                float value = Float.parseFloat(tv.getText().toString());
+                float res = value/100;
+                tv.setText(String.valueOf(res));
+            }
+        });
+
+        eqbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(op=='+')
+                {
+                    tv.setText(String.valueOf(result + Float.parseFloat(tv.getText().toString())));
+                }
+                if (op == '-')
+                {
+                    tv.setText(String.valueOf(result - Float.parseFloat(tv.getText().toString())));
+                }
+                if (op == '*')
+                {
+                    tv.setText(String.valueOf(result * Float.parseFloat(tv.getText().toString())));
+                }
+                if (op == '/')
+                {
+                    tv.setText(String.valueOf(result / Float.parseFloat(tv.getText().toString())));
+                }
+                tv2.setText("");
+            }
+        });
+
     }
 }
+
