@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -29,11 +30,13 @@ public class MainActivity extends AppCompatActivity {
     Button delbtn;
     Button zerobtn;
     Button point;
+    Button ansbtn;
     TextView tv;
     TextView tv2;
 
     private float result;
     private char op;
+    private float ans;
 
 
     @Override
@@ -60,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         perc=findViewById(R.id.perc);
         delbtn=findViewById(R.id.delbtn);
         acbtn=findViewById(R.id.acbtn);
+        ansbtn=findViewById(R.id.ansbtn);
         tv=findViewById(R.id.textView);
         tv2=findViewById(R.id.textView2);
 
@@ -202,7 +206,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 float value = Float.parseFloat(tv.getText().toString());
                 float res = value/100;
+                ans=res;
                 tv.setText(String.valueOf(res));
+            }
+        });
+
+        ansbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tv.setText(String.valueOf(ans));
             }
         });
 
@@ -211,18 +223,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(op=='+')
                 {
+                    ans=result + Float.parseFloat(tv.getText().toString());
                     tv.setText(String.valueOf(result + Float.parseFloat(tv.getText().toString())));
                 }
                 if (op == '-')
                 {
+                    ans=result - Float.parseFloat(tv.getText().toString());
                     tv.setText(String.valueOf(result - Float.parseFloat(tv.getText().toString())));
                 }
                 if (op == '*')
                 {
+                    ans=result * Float.parseFloat(tv.getText().toString());
                     tv.setText(String.valueOf(result * Float.parseFloat(tv.getText().toString())));
                 }
                 if (op == '/')
                 {
+                    ans=result / Float.parseFloat(tv.getText().toString());
                     tv.setText(String.valueOf(result / Float.parseFloat(tv.getText().toString())));
                 }
                 tv2.setText("");
@@ -230,5 +246,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 }
 
