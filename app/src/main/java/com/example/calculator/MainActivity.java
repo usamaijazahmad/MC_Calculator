@@ -3,6 +3,7 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.renderscript.Sampler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
     Button zerobtn;
     Button point;
     Button ansbtn;
+//    Button sqbtn;
+//    Button sqrtbtn;
+//    Button cubbtn;
+//    Button cebtn;
     TextView tv;
     TextView tv2;
 
@@ -64,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
         delbtn=findViewById(R.id.delbtn);
         acbtn=findViewById(R.id.acbtn);
         ansbtn=findViewById(R.id.ansbtn);
+//        sqbtn=findViewById(R.id.sqbtn);
+//        sqrtbtn=findViewById(R.id.sqrtbtn);
+//        cebtn=findViewById(R.id.cebtn);
+//        cubbtn=findViewById(R.id.cubbtn);
         tv=findViewById(R.id.textView);
         tv2=findViewById(R.id.textView2);
 
@@ -146,6 +155,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        cebtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                tv.setText("");
+//                tv2.setText("");
+//
+//            }
+//        });
+
         delbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -210,6 +228,36 @@ public class MainActivity extends AppCompatActivity {
                 tv.setText(String.valueOf(res));
             }
         });
+
+//        sqrtbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                double value = Double.parseDouble(tv.getText().toString());
+//                double res = Math.sqrt(value);
+//                ans=res;
+//                tv.setText(String.valueOf(res));
+//            }
+//        });
+
+//        sqbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                float value = Float.parseFloat(tv.getText().toString());
+//                float res = value*value;
+//                ans=res;
+//                tv.setText(String.valueOf(res));
+//            }
+//        });
+//
+//        cubbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                float value = Float.parseFloat(tv.getText().toString());
+//                float res = value*value*value;
+//                ans=res;
+//                tv.setText(String.valueOf(res));
+//            }
+//        });
 
         ansbtn.setOnClickListener(new View.OnClickListener() {
             @Override
