@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 op ='-';
                 result = Float.parseFloat(tv.getText().toString());
-                tv2.setText(String.valueOf(result)+'-');
+                tv2.setText(String.valueOf(result)+'–');
                 tv.setText("");
             }
         });
@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 op ='*';
                 result = Float.parseFloat(tv.getText().toString());
-                tv2.setText(String.valueOf(result)+'x');
+                tv2.setText(String.valueOf(result)+'×');
                 tv.setText("");
             }
         });

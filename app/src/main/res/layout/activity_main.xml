@@ -53,9 +53,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#111111"
+        android:text="–"
         android:textColor="@color/red"
-        android:text="-"
-        android:textSize="45dp"
+        android:textSize="30dp"
         app:layout_constraintStart_toEndOf="@+id/btn6"
         app:layout_constraintTop_toBottomOf="@+id/mulbtn" />
 
@@ -66,9 +66,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#111111"
+        android:text="×"
         android:textColor="@color/red"
-        android:text="x"
-        android:textSize="20dp"
+        android:textSize="30dp"
         app:layout_constraintStart_toEndOf="@+id/btn9"
         app:layout_constraintTop_toBottomOf="@+id/divbtn" />
 
@@ -242,9 +242,9 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="400dp"
+        android:layout_width="370dp"
         android:layout_height="80dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="212dp"
         android:textColor="@color/red"
         android:textSize="60dp"
@@ -260,7 +260,7 @@
         android:backgroundTint="#111111"
         android:text="÷"
         android:textColor="@color/red"
-        android:textSize="35dp"
+        android:textSize="30dp"
         app:layout_constraintStart_toEndOf="@+id/perc"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -281,7 +281,7 @@
         android:id="@+id/textView2"
         android:layout_width="170dp"
         android:layout_height="40dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="148dp"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"

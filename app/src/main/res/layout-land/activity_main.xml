@@ -107,9 +107,9 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="2dp"
         android:backgroundTint="#111111"
-        android:text="-"
+        android:text="–"
         android:textColor="@color/red"
-        android:textSize="24dp"
+        android:textSize="22dp"
         app:layout_constraintStart_toEndOf="@+id/btn9"
         app:layout_constraintTop_toBottomOf="@+id/divbtn" />
 
@@ -120,9 +120,9 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"
         android:backgroundTint="#111111"
-        android:text="x"
+        android:text="×"
         android:textColor="@color/red"
-        android:textSize="13dp"
+        android:textSize="22dp"
         app:layout_constraintStart_toEndOf="@+id/divbtn"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
