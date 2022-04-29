@@ -2,9 +2,13 @@ package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.renderscript.Sampler;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -47,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ColorDrawable cd=new ColorDrawable(Color.parseColor("#000000"));
+        getSupportActionBar().setBackgroundDrawable(cd);
         setContentView(R.layout.activity_main);
 
         btn1=findViewById(R.id.btn1);
@@ -168,7 +174,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CharSequence name = tv.getText().toString();
-                tv.setText(name.subSequence(0, name.length()-1));
+                if(name=="")
+                {
+                    tv.setText("");
+                }
+                else {
+                    tv.setText(name.subSequence(0, name.length() - 1));
+                }
             }
         });
 
@@ -182,50 +194,85 @@ public class MainActivity extends AppCompatActivity {
         plusbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                op ='+';
-                result = Float.parseFloat(tv.getText().toString());
-                tv2.setText(String.valueOf(result)+'+');
-                tv.setText("");
+                CharSequence name = tv.getText().toString();
+                if(name=="")
+                {
+                    tv.setText("");
+                }
+                else {
+                    op = '+';
+                    result = Float.parseFloat(tv.getText().toString());
+                    tv2.setText(String.valueOf(result) + '+');
+                    tv.setText("");
+                }
             }
         });
 
         minbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                op ='-';
-                result = Float.parseFloat(tv.getText().toString());
-                tv2.setText(String.valueOf(result)+'–');
-                tv.setText("");
+                CharSequence name = tv.getText().toString();
+                if(name=="")
+                {
+                    tv.setText("");
+                }
+                else {
+                    op = '-';
+                    result = Float.parseFloat(tv.getText().toString());
+                    tv2.setText(String.valueOf(result) + '–');
+                    tv.setText("");
+                }
             }
         });
 
         mulbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                op ='*';
-                result = Float.parseFloat(tv.getText().toString());
-                tv2.setText(String.valueOf(result)+'×');
-                tv.setText("");
+                CharSequence name = tv.getText().toString();
+                if(name=="")
+                {
+                    tv.setText("");
+                }
+                else {
+                    op = '*';
+                    result = Float.parseFloat(tv.getText().toString());
+                    tv2.setText(String.valueOf(result) + '×');
+                    tv.setText("");
+                }
             }
         });
 
         divbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                op ='/';
-                result = Float.parseFloat(tv.getText().toString());
-                tv2.setText(String.valueOf(result)+'÷');
-                tv.setText("");
+                CharSequence name = tv.getText().toString();
+                if(name=="")
+                {
+                    tv.setText("");
+                }
+                else {
+                    op = '/';
+                    result = Float.parseFloat(tv.getText().toString());
+                    tv2.setText(String.valueOf(result) + '÷');
+                    tv.setText("");
+                }
             }
         });
 
         perc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                float value = Float.parseFloat(tv.getText().toString());
-                float res = value/100;
-                ans=res;
-                tv.setText(String.valueOf(res));
+                CharSequence name = tv.getText().toString();
+                if(name=="")
+                {
+                    tv.setText("");
+                }
+                else {
+                    float value = Float.parseFloat(tv.getText().toString());
+                    float res = value / 100;
+                    ans = res;
+                    tv.setText(String.valueOf(res));
+                }
             }
         });
 
