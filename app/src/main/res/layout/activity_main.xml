@@ -244,11 +244,11 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="370dp"
-        android:layout_height="80dp"
+        android:layout_height="56dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="248dp"
         android:textColor="@color/red"
-        android:textSize="60dp"
+        android:textSize="44dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -258,7 +258,7 @@
         android:layout_width="350dp"
         android:layout_height="0.5dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="4dp"
         android:background="@color/grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"></View>
@@ -294,7 +294,7 @@
         android:layout_width="170dp"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="192dp"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

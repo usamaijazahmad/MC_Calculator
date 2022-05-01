@@ -316,27 +316,30 @@ public class MainActivity extends AppCompatActivity {
         eqbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(op=='+')
+                CharSequence name = tv.getText().toString();
+                if(name=="")
                 {
-                    ans=result + Float.parseFloat(tv.getText().toString());
-                    tv.setText(String.valueOf(result + Float.parseFloat(tv.getText().toString())));
+                    tv.setText("");
                 }
-                if (op == '-')
-                {
-                    ans=result - Float.parseFloat(tv.getText().toString());
-                    tv.setText(String.valueOf(result - Float.parseFloat(tv.getText().toString())));
+                else {
+                    if (op == '+') {
+                        ans = result + Float.parseFloat(tv.getText().toString());
+                        tv.setText(String.valueOf(result + Float.parseFloat(tv.getText().toString())));
+                    }
+                    if (op == '-') {
+                        ans = result - Float.parseFloat(tv.getText().toString());
+                        tv.setText(String.valueOf(result - Float.parseFloat(tv.getText().toString())));
+                    }
+                    if (op == '*') {
+                        ans = result * Float.parseFloat(tv.getText().toString());
+                        tv.setText(String.valueOf(result * Float.parseFloat(tv.getText().toString())));
+                    }
+                    if (op == '/') {
+                        ans = result / Float.parseFloat(tv.getText().toString());
+                        tv.setText(String.valueOf(result / Float.parseFloat(tv.getText().toString())));
+                    }
+                    tv2.setText("");
                 }
-                if (op == '*')
-                {
-                    ans=result * Float.parseFloat(tv.getText().toString());
-                    tv.setText(String.valueOf(result * Float.parseFloat(tv.getText().toString())));
-                }
-                if (op == '/')
-                {
-                    ans=result / Float.parseFloat(tv.getText().toString());
-                    tv.setText(String.valueOf(result / Float.parseFloat(tv.getText().toString())));
-                }
-                tv2.setText("");
             }
         });
 
